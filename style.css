@@ -1,0 +1,345 @@
+/* ============ 基础 ============ */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: #0366d6; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1 {
+  font-size: 32px;
+  margin: 0 0 4px 0;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 22px;
+  margin: 24px 0 12px 0;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #ccc;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 17px;
+  margin: 18px 0 6px 0;
+  font-weight: bold;
+}
+
+p { margin: 6px 0; }
+ul { margin: 6px 0 6px 0; padding-left: 22px; }
+li { margin: 3px 0; }
+
+b { font-weight: bold; }
+em { font-style: italic; }
+
+.justify { text-align: justify; }
+
+/* ============ 布局容器 ============ */
+.layout-content {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 20px 24px 60px 24px;
+}
+
+/* ============ 顶部导航 ============ */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 0;
+}
+
+.nav-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 10px 24px;
+  position: relative;
+}
+
+.layout-menu {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 18px;
+  align-items: center;
+  flex: 1;
+}
+
+.layout-menu a {
+  font-size: 15px;
+  color: #000;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.layout-menu a:hover { color: #0366d6; text-decoration: none; }
+
+.lang-toggle {
+  flex-shrink: 0;
+  margin-left: auto;
+  padding: 4px 14px;
+  border: 1px solid #bbb;
+  border-radius: 14px;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+.lang-toggle:hover { border-color: #0366d6; color: #0366d6; }
+
+/* 汉堡按钮（默认隐藏，移动端显示） */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  margin-right: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.hamburger .bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #000;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+/* 展开时汉堡变 X */
+.hamburger.open .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open .bar:nth-child(2) { opacity: 0; }
+.hamburger.open .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* 遮罩 */
+.menu-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  z-index: 99;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.menu-overlay.show { opacity: 1; }
+
+/* ============ Header ============ */
+.header-table { width: 100%; border-collapse: collapse; }
+.header-info { vertical-align: top; }
+
+.affil { margin: 8px 0; font-size: 16px; }
+.contact a { color: #0366d6; word-break: break-all; }
+
+.social-icons { margin-top: 10px; display: flex; gap: 16px; align-items: center; }
+.social-icons a { color: #333; display: inline-flex; padding: 4px; }
+.social-icons a:hover { color: #0366d6; }
+
+.header-photo { vertical-align: top; text-align: right; width: 220px; }
+.img-circle {
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+.alias { font-size: 20px; font-weight: normal; color: #555; }
+
+/* ============ News ============ */
+.news-scroll { overflow-y: auto; max-height: 320px; padding-right: 8px; }
+.news-table { width: 100%; border-collapse: collapse; }
+.news-table td { padding: 4px 8px 4px 0; vertical-align: top; font-size: 15px; }
+.news-table td:first-child { white-space: nowrap; font-weight: bold; width: 90px; }
+
+/* ============ Publications ============ */
+.pub { margin: 8px 0 16px 0; }
+.pub p { margin: 4px 0; }
+
+/* ============ Projects ============ */
+.proj { margin: 16px 0; }
+.proj-title { margin-bottom: 2px; }
+.proj-meta { font-size: 14px; color: #555; }
+.proj ul { margin-top: 4px; }
+
+/* ============ Experience ============ */
+.exp-table { width: 100%; border-collapse: collapse; }
+.exp-info { vertical-align: top; padding-bottom: 18px; }
+.exp-company { margin: 0; font-size: 16px; }
+.exp-role { margin: 2px 0 6px 0; font-size: 14px; color: #555; }
+.exp-info ul { margin: 4px 0; }
+
+/* ============ Education ============ */
+.edu-table { width: 100%; border-collapse: collapse; }
+.edu-info { vertical-align: top; padding-bottom: 18px; }
+.edu-school { margin: 0; font-size: 16px; }
+.edu-loc { font-weight: normal; color: #555; font-size: 14px; }
+.edu-degree { margin: 2px 0; font-size: 15px; }
+.edu-detail { margin: 4px 0; font-size: 14px; color: #333; }
+/* 桌面端：日期显示在右侧独立列，隐藏 info 内的重复日期 */
+.edu-date { display: none; margin: 2px 0; font-size: 13px; color: #555; }
+.edu-date-col { vertical-align: top; text-align: right; white-space: nowrap; color: #555; font-size: 14px; width: 130px; }
+
+/* ============ Skills ============ */
+.skills-list li { margin: 5px 0; }
+
+/* ============ Footer ============ */
+#footer { margin-top: 30px; padding-top: 12px; border-top: 1px solid #ccc; }
+.footer-center { text-align: center; font-size: 13px; color: #666; }
+
+/* ============ 返回顶部按钮 ============ */
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  background-color: #8d93ab;
+  color: #fff;
+  cursor: pointer;
+  padding: 12px 15px;
+  border-radius: 4px;
+  -webkit-tap-highlight-color: transparent;
+}
+#myBtn:hover { background-color: #555; }
+
+/* =========================================================
+   响应式 —— iPad（平板）
+   ========================================================= */
+@media (max-width: 1024px) {
+  .layout-content { padding: 18px 28px 50px 28px; }
+  .nav-inner { padding: 10px 28px; }
+}
+
+/* =========================================================
+   响应式 —— iPad 竖屏 / 大屏手机
+   ========================================================= */
+@media (max-width: 768px) {
+  body { font-size: 15px; }
+  h1 { font-size: 28px; }
+  h2 { font-size: 20px; }
+
+  .layout-content { padding: 16px 20px 48px 20px; }
+  .nav-inner { padding: 8px 16px; }
+
+  /* 显示汉堡按钮 */
+  .hamburger { display: flex; }
+
+  /* 菜单改为侧滑抽屉 */
+  .layout-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 78%;
+    max-width: 320px;
+    background-color: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 70px 24px 24px 24px;
+    box-shadow: 2px 0 16px rgba(0, 0, 0, 0.15);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 100;
+    overflow-y: auto;
+  }
+  .layout-menu.open { transform: translateX(0); }
+
+  .layout-menu a {
+    display: block;
+    width: 100%;
+    font-size: 17px;
+    padding: 12px 8px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .layout-menu a:hover { background-color: #f7f7f7; text-decoration: none; }
+
+  /* 语言切换按钮在抽屉里靠左 */
+  .lang-toggle {
+    margin-left: 0;
+    margin-top: 16px;
+    align-self: flex-start;
+  }
+
+  .menu-overlay.show { display: block; }
+
+  /* Header：头像与文字改为上下布局，头像居上 */
+  .header-table, .header-table tbody, .header-table tr, .header-table td {
+    display: block;
+    width: 100%;
+  }
+  .header-photo { text-align: center; width: 100%; margin: 0 0 16px 0; }
+  .header-info { text-align: center; }
+  .img-circle { width: 150px; height: 150px; }
+  .social-icons { justify-content: center; }
+
+  /* Education：日期列隐藏，改在 info 内显示日期 */
+  .edu-date-col { display: none; }
+  .edu-date { display: block; }
+  .edu-info { padding-bottom: 16px; }
+
+  /* News 表格：日期与内容分行显示 */
+  .news-table td:first-child { width: auto; display: block; }
+  .news-table tr { display: block; padding: 6px 0; border-bottom: 1px solid #f0f0f0; }
+  .news-table tr:last-child { border-bottom: none; }
+}
+
+/* =========================================================
+   响应式 —— 手机
+   ========================================================= */
+@media (max-width: 480px) {
+  body { font-size: 14px; line-height: 1.6; }
+  h1 { font-size: 24px; }
+  h2 { font-size: 19px; margin-top: 20px; }
+  h3 { font-size: 16px; }
+
+  .layout-content { padding: 14px 16px 44px 16px; }
+
+  .img-circle { width: 130px; height: 130px; }
+
+  /* 邮箱换行，避免溢出 */
+  .affil { font-size: 14px; }
+  .contact { word-break: break-all; }
+
+  /* 列表缩进收紧 */
+  ul { padding-left: 18px; }
+
+  .proj-meta { font-size: 13px; }
+  .exp-role { font-size: 13px; }
+  .edu-degree, .edu-detail { font-size: 13px; }
+
+  /* 返回顶部按钮更靠近边缘、略小 */
+  #myBtn { bottom: 16px; right: 16px; padding: 10px 13px; font-size: 13px; }
+}
+
+/* =========================================================
+   响应式 —— 极小屏（如 iPhone SE 等 320px 级）
+   ========================================================= */
+@media (max-width: 360px) {
+  h1 { font-size: 22px; }
+  .alias { font-size: 16px; }
+  .img-circle { width: 110px; height: 110px; }
+}

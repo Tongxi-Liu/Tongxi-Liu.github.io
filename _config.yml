@@ -1,0 +1,5 @@
+/* GitHub Pages (Jekyll) 配置：本主页为纯静态站点，无需 Jekyll 构建 */
+# 使用 GitHub Pages 默认 Jekyll 时会自动构建，
+# 关闭它以让纯静态 HTML 原样发布。
+theme: null
+markdown: kramdown

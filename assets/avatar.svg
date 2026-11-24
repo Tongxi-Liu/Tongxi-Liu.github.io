@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="100" fill="#e8edf2"/>
+  <circle cx="100" cy="82" r="34" fill="#b6c2ce"/>
+  <path d="M100 126c-34 0-58 22-58 46 0 6 5 11 11 11h94c6 0 11-5 11-11 0-24-24-46-58-46z" fill="#b6c2ce"/>
+  <text x="100" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#7a8a99">TL</text>
+</svg>

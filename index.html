@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Tongxi Liu (Terence) — Data Analytics, Machine Learning & Multimodal AI. Personal homepage.">
+<meta name="keywords" content="Tongxi Liu, Terence Liu, Data Analytics, Machine Learning, Deep Learning, LLM, Multimodal, Power BI, Tableau, Spark">
+<title>Tongxi Liu (Terence)</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+<body>
+
+<!-- ============ 顶部导航 ============ -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <div class="layout-menu" id="layoutMenu">
+      <a href="#bio" data-en="Bio" data-zh="简介">Bio</a>
+      <a href="#news" data-en="News" data-zh="动态">News</a>
+      <a href="#publications" data-en="Publications" data-zh="论文">Publications</a>
+      <a href="#projects" data-en="Projects" data-zh="项目">Projects</a>
+      <a href="#experience" data-en="Experience" data-zh="经历">Experience</a>
+      <a href="#education" data-en="Education" data-zh="教育">Education</a>
+      <a href="#awards" data-en="Honors" data-zh="荣誉">Honors</a>
+      <a href="#" class="lang-toggle" id="langToggle" title="Switch language">中文</a>
+    </div>
+  </div>
+</nav>
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<div class="layout-content">
+
+  <!-- ============ Header ============ -->
+  <table class="header-table">
+    <tbody>
+      <tr>
+        <td class="header-info">
+          <div class="toptitle">
+            <h1>Tongxi LIU <span class="alias" data-en="(Terence)" data-zh="(刘曈晞)">(Terence)</span></h1>
+          </div>
+          <p class="affil">
+            <span data-en="Data Analytics & Machine Learning Practitioner" data-zh="数据分析与机器学习从业者"></span><br>
+            <span data-en="Hefei, Anhui Province, China" data-zh="中国·安徽·合肥"></span><br>
+            <span class="contact">
+              Email: <a href="mailto:terence.liu99@qq.com">terence.liu99@qq.com</a>
+              &nbsp;|&nbsp; <a href="mailto:tongxi_liu@163.com">tongxi_liu@163.com</a>
+            </span>
+          </p>
+          <div class="social-icons">
+            <a href="https://github.com/Tongxi-Liu" target="_blank" title="GitHub" aria-label="GitHub">
+              <svg viewBox="0 0 16 16" width="24" height="24"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/YOUR_PROFILE" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+              <svg viewBox="0 0 16 16" width="24" height="24"><path fill="currentColor" d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.031.678 0 7.225 0 7.225h2.4z"/></svg>
+            </a>
+          </div>
+        </td>
+        <td class="header-photo">
+          <!-- 替换为你的照片：assets/avatar.jpg -->
+          <img class="img-circle" src="assets/avatar.svg" alt="Tongxi Liu" width="200">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+
+  <!-- ============ Bio ============ -->
+  <div id="bio">
+    <h2 data-en="Bio" data-zh="简介">Bio</h2>
+    <p class="justify" data-en="I am a data analytics and machine learning practitioner with a strong background in applied data science, currently working on after-sales claims analytics and intelligent systems at Volkswagen. I am preparing for a Ph.D. application in 2027, focusing on multimodal learning, monocular depth estimation, and 3D scene understanding driven by large language models. My work spans big-data engineering, predictive modeling, and business intelligence."
+       data-zh="我是一名拥有扎实应用数据科学背景的数据分析与机器学习从业者，现任职于大众汽车，从事售后索赔数据分析与智能化系统建设。我正在筹备 2027 年博士申请，研究方向为多模态学习、单目深度估计以及大模型驱动的 3D 场景理解。我的工作横跨大数据工程、预测建模与商业智能。">
+    </p>
+    <p><b data-en="[Research Interests]" data-zh="【研究兴趣】">[Research Interests]</b>
+      <span data-en="Multimodal learning, computer vision, monocular depth estimation, 3D scene understanding, large language models (LLMs), and data mining."
+            data-zh="多模态学习、计算机视觉、单目深度估计、3D 场景理解、大语言模型（LLM）以及数据挖掘。"></span>
+    </p>
+    <p><b data-en="[Recruitment / Contact]" data-zh="【博士申请 / 联系】">[Recruitment / Contact]</b>
+      <span data-en="I am actively seeking Ph.D. positions starting in 2027. Feel free to reach out via email if you are interested in collaboration or supervision."
+            data-zh="我正在积极寻找 2027 年入学的博士机会。欢迎通过邮件联系，交流合作或指导意向。"></span>
+    </p>
+  </div>
+
+  <br>
+
+  <!-- ============ News ============ -->
+  <div id="news">
+    <h2 data-en="News" data-zh="动态">News</h2>
+    <div class="news-scroll">
+      <table class="news-table">
+        <tr valign="top"><td>[01/2026]</td>
+          <td data-en="Started an independent research project on multimodal learning for monocular depth estimation and 3D scene understanding."
+              data-zh="启动独立研究项目：多模态学习用于单目深度估计与 3D 场景理解。"></td></tr>
+        <tr valign="top"><td>[2026]</td>
+          <td data-en="Paper <i>“Collaborative Framework Construction of Monocular Depth Estimation and 3D Scene Understanding Driven by Multimodal Large Model”</i> submitted to <i>Multimedia Systems</i>."
+              data-zh="论文《多模态大模型驱动的单目深度估计与 3D 场景理解协同框架构建》投稿至 <i>Multimedia Systems</i>。"></td></tr>
+        <tr valign="top"><td>[04/2024]</td>
+          <td data-en="Joined Volkswagen (Anhui) Automotive Company Limited in the Technical Service Department."
+              data-zh="加入大众汽车（安徽）有限公司技术服务部。"></td></tr>
+        <tr valign="top"><td>[01/2024]</td>
+          <td data-en="Graduated with a Master of Science in Applied Data Analytics from Boston University."
+              data-zh="毕业于波士顿大学，获应用数据分析理学硕士学位。"></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <br><br>
+
+  <!-- ============ Publications ============ -->
+  <div id="publications">
+    <h2 data-en="Selected Publications" data-zh="代表性论文">Selected Publications</h2>
+
+    <h3 data-en="Journal Papers" data-zh="期刊论文">Journal Papers</h3>
+    <div class="pub">
+      <p>
+        <b data-en="Collaborative Framework Construction of Monocular Depth Estimation and 3D Scene Understanding Driven by Multimodal Large Model"
+           data-zh="多模态大模型驱动的单目深度估计与 3D 场景理解协同框架构建"></b><br>
+        <b>Liu, Tongxi</b><br>
+        <em data-en="Submitted to Multimedia Systems" data-zh="投稿至 Multimedia Systems"></em>
+      </p>
+    </div>
+
+    <h3 data-en="Undergraduate Thesis" data-zh="本科毕业论文">Undergraduate Thesis</h3>
+    <div class="pub">
+      <p>
+        <b data-en="Research on the Discovery of Financial Fraud Behaviors of Listed Companies Based on Machine Learning — Taking LeTV and Gree Electric Appliances as Examples"
+           data-zh="基于机器学习的上市公司财务舞弊行为发现研究——以乐视网与格力电器为例"></b><br>
+        <b>Liu, Tongxi</b><br>
+        <em data-en="Excellent Undergraduate Thesis Award, Hubei University of Economics" data-zh="湖北经济学院优秀毕业论文"></em>
+      </p>
+    </div>
+  </div>
+
+  <br>
+
+  <!-- ============ Research & Projects ============ -->
+  <div id="projects">
+    <h2 data-en="Research & Projects" data-zh="研究与项目">Research &amp; Projects</h2>
+
+    <!-- Research -->
+    <div class="proj">
+      <p class="proj-title">
+        <b data-en="Multimodal Learning for Monocular Depth Estimation and 3D Scene Understanding"
+           data-zh="多模态学习用于单目深度估计与 3D 场景理解"></b><br>
+        <span class="proj-meta" data-en="Independent Research Project | 01/2026 – Present"
+              data-zh="独立研究项目 | 2026.01 – 至今"></span>
+      </p>
+      <ul>
+        <li data-en="Examined key challenges in monocular depth estimation and 3D scene understanding, including scale ambiguity and the limited coordination between geometric reconstruction and semantic interpretation."
+            data-zh="研究了单目深度估计与 3D 场景理解中的关键挑战，包括尺度歧义，以及几何重建与语义理解之间协调不足的问题。"></li>
+        <li data-en="Explored a multimodal framework integrating Vision Transformer (ViT) image features with text-based semantic priors through cross-attention to incorporate high-level scene context into visual perception."
+            data-zh="探索了一种多模态框架，通过交叉注意力将 Vision Transformer（ViT）图像特征与基于文本的语义先验融合，将高层场景上下文引入视觉感知。"></li>
+        <li data-en="Investigated approaches to scale-constrained depth estimation and geometry-semantic scene reconstruction, combining sparse depth correction, camera-intrinsic-based 3D back-projection, and semantic labeling."
+            data-zh="研究了尺度约束的深度估计与几何-语义场景重建方法，结合稀疏深度校正、基于相机内参的 3D 反投影与语义标注。"></li>
+        <li data-en="Reviewed cross-task optimization strategies involving joint depth, reconstruction, semantic, and scale-consistency losses, as well as dynamic weighting and evaluation through baseline comparisons and ablation studies."
+            data-zh="梳理了涉及深度、重建、语义与尺度一致性联合损失的跨任务优化策略，以及动态加权与基于基线对比和消融实验的评估方法。"></li>
+      </ul>
+    </div>
+
+    <!-- Project 1 -->
+    <div class="proj">
+      <p class="proj-title">
+        <b data-en="Prediction of Car Accident Severity in the United States: Big Data Analysis using Spark"
+           data-zh="美国车祸严重性预测：基于 Spark 的大数据分析"></b><br>
+        <span class="proj-meta" data-en="Supervised by Prof. Farshid Alizadeh-Shabdiz, Boston University | 09/2023 – 12/2023"
+              data-zh="指导：波士顿大学 Farshid Alizadeh-Shabdiz 副教授 | 2023.09 – 2023.12"></span>
+      </p>
+      <ul>
+        <li data-en="Processed 70M+ accident records using Spark and engineered 40+ predictive features based on weather, geography, and traffic conditions."
+            data-zh="使用 Spark 处理 7000 万+ 车祸记录，基于天气、地理与交通状况构建了 40 多个预测特征。"></li>
+        <li data-en="Designed a data warehouse to support scalable data access and improve query efficiency."
+            data-zh="设计数据仓库以支持可扩展的数据访问并提升查询效率。"></li>
+        <li data-en="Trained and evaluated six machine learning models; the Random Forest model achieved 83% accuracy, outperforming SVM, Gradient Boosting, Decision Tree, Logistic Regression, and Neural Network models."
+            data-zh="训练并评估了六种机器学习模型；随机森林模型达到 83% 准确率，优于 SVM、梯度提升、决策树、逻辑回归与神经网络模型。"></li>
+      </ul>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="proj">
+      <p class="proj-title">
+        <b data-en="Data Warehouse Design for U.S. Car Accidents and Zero-Emission Vehicles"
+           data-zh="美国车祸与零排放车辆数据仓库设计"></b><br>
+        <span class="proj-meta" data-en="Supervised by Jack Polnar, Boston University | 09/2023 – 12/2023"
+              data-zh="指导：波士顿大学 Jack Polnar | 2023.09 – 2023.12"></span>
+      </p>
+      <ul>
+        <li data-en="Designed a constellation-schema data warehouse integrating 2016–2023 U.S. accident records and California zero-emission vehicle (ZEV) data."
+            data-zh="设计了星座模式的数据仓库，整合 2016–2023 年美国车祸记录与加州零排放车辆（ZEV）数据。"></li>
+        <li data-en="Implemented storage optimization and indexing strategies using Python, Spark, and SQL."
+            data-zh="使用 Python、Spark 与 SQL 实现了存储优化与索引策略。"></li>
+        <li data-en="Built Tableau dashboards to visualize accident distribution and analyze ZEV growth trends across California."
+            data-zh="构建 Tableau 仪表盘，可视化车祸分布并分析加州零排放车辆的增长趋势。"></li>
+      </ul>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="proj">
+      <p class="proj-title">
+        <b data-en="Churn Prediction of Football Players — Data Mining Practice using Python, Spark, and R"
+           data-zh="足球运动员流失预测——基于 Python、Spark 与 R 的数据挖掘实践"></b><br>
+        <span class="proj-meta" data-en="Supervised by Prof. Jae Young Lee, Boston University | 01/2023 – 11/2023"
+              data-zh="指导：波士顿大学 Jae Young Lee 助理教授 | 2023.01 – 2023.11"></span>
+      </p>
+      <ul>
+        <li data-en="Preprocessed large-scale European football datasets, resolving missing values and outliers, and applying five feature-selection methods (PCA, Information Gain, CFS, etc.)."
+            data-zh="预处理大规模欧洲足球数据集，处理缺失值与异常值，并应用五种特征选择方法（PCA、信息增益、CFS 等）。"></li>
+        <li data-en="Built and trained Neural Network and SVM models on Spark, AWS, and Google Cloud Platform."
+            data-zh="在 Spark、AWS 与 Google Cloud Platform 上构建并训练神经网络与 SVM 模型。"></li>
+        <li data-en="The Random Forest model achieved 76% accuracy, the highest among five ML algorithms evaluated."
+            data-zh="随机森林模型达到 76% 准确率，在所评估的五种机器学习算法中最高。"></li>
+      </ul>
+    </div>
+  </div>
+
+  <br>
+
+  <!-- ============ Experience ============ -->
+  <div id="experience">
+    <h2 data-en="Professional Experience" data-zh="工作经历">Professional Experience</h2>
+
+    <table class="exp-table">
+      <tr>
+        <td class="exp-info">
+          <p class="exp-company"><b>Volkswagen (Anhui) Automotive Company Limited</b></p>
+          <p class="exp-role" data-en="Claims Business & Market Support, Technical Service Department | 04/2024 – Present"
+             data-zh="技术服务部 · 索赔业务与市场支持 | 2024.04 – 至今"></p>
+          <ul>
+            <li data-en="Automated the collection, cleaning, and processing of nationwide after-sales claims data using Python, reducing data preparation time from several days to a few hours."
+                data-zh="使用 Python 自动化采集、清洗与处理全国售后索赔数据，将数据处理准备时间从数天缩短至数小时。"></li>
+            <li data-en="Analyzed claim amounts, failure types, dealership performance, and warranty parts; developed Power BI and Tableau dashboards and periodic reports to support quality improvement and business decisions."
+                data-zh="围绕索赔金额、故障类型、经销商表现与索赔件开展分析；开发 Power BI 与 Tableau 仪表盘及周期性报告，支持质量改进与业务决策。"></li>
+            <li data-en="Contributed to an intelligent after-sales service system and data lake, designing a claims reporting module and supporting AI training data preparation, annotation, and analysis."
+                data-zh="参与智能化售后服务系统与数据湖建设，设计索赔报告模块，支持 AI 训练数据的准备、标注与分析。"></li>
+            <li data-en="Applied data analysis to identify potentially irregular and high-risk claims, supporting claim cost control, quality improvement, and standardized reporting."
+                data-zh="运用数据分析识别潜在异常与高风险索赔，支持索赔成本控制、质量改进与报表标准化。"></li>
+            <li data-en="Managed end-to-end claims operations, including claim assessment, dealer support and training, warranty parts management, and Volkswagen Group claims system configuration and maintenance."
+                data-zh="负责车辆售后索赔全流程处理，包括索赔鉴定、经销商支持与培训、索赔件管理，以及大众集团索赔系统的配置与维护。"></li>
+          </ul>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="exp-info">
+          <p class="exp-company"><b>Amazon China</b></p>
+          <p class="exp-role" data-en="Business Analytics Department Intern | 08/2019 – 12/2019"
+             data-zh="商业分析部门实习生 | 2019.08 – 2019.12"></p>
+          <ul>
+            <li data-en="Supported the deployment of the Earliest Delivery Date (EDD) feature, improving delivery-time prediction accuracy for Amazon.cn customers."
+                data-zh="支持最早送达日期（EDD）功能上线，提升了亚马逊中国客户的配送时间预测准确率。"></li>
+            <li data-en="Built a Tableau-based warehouse mapping dashboard to visualize storage conditions across regional warehouses, enabling data-driven optimization by cross-functional teams."
+                data-zh="构建基于 Tableau 的仓储分布仪表盘，可视化各区域仓库的存储状况，助力跨部门团队进行数据驱动的优化。"></li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <br>
+
+  <!-- ============ Education ============ -->
+  <div id="education">
+    <h2 data-en="Education" data-zh="教育经历">Education</h2>
+    <table class="edu-table">
+      <tr>
+        <td class="edu-info">
+          <p class="edu-school"><b>Boston University</b> <span class="edu-loc">(USA)</span></p>
+          <p class="edu-degree" data-en="Master of Science, Applied Data Analytics | GPA: 3.68/4.0 (top 10%)"
+             data-zh="理学硕士 · 应用数据分析 | GPA: 3.68/4.0（前 10%）"></p>
+          <p class="edu-date">09/2022 – 01/2024</p>
+          <p class="edu-detail" data-en="Core coursework: Analysis of Algorithms, Foundations of Machine Learning, Data Mining, Big Data Analysis, Data Science with Python, Web Mining and Graph Analytics, Designing and Implementing a Data Warehouse."
+             data-zh="核心课程：算法分析、机器学习基础、数据挖掘、大数据分析、Python 数据科学、网络挖掘与图分析、数据仓库设计与实现。"></p>
+        </td>
+        <td class="edu-date-col">09/2022 – 01/2024</td>
+      </tr>
+      <tr>
+        <td class="edu-info">
+          <p class="edu-school"><b>Hubei University of Economics</b> <span class="edu-loc">(China)</span></p>
+          <p class="edu-degree" data-en="Bachelor of Management, Information Management and Information System | GPA: 3.8/4.0 (top 1)"
+             data-zh="管理学学士 · 信息管理与信息系统（中美合作）| GPA: 3.8/4.0（前 1%）"></p>
+          <p class="edu-date">09/2017 – 06/2021</p>
+          <p class="edu-detail" data-en="Joint teaching program with Auburn University at Montgomery. Awarded Excellent Undergraduate Thesis."
+             data-zh="与蒙哥马利奥本大学联合培养项目。获优秀本科毕业论文。"></p>
+        </td>
+        <td class="edu-date-col">09/2017 – 06/2021</td>
+      </tr>
+    </table>
+  </div>
+
+  <br>
+
+  <!-- ============ Skills ============ -->
+  <div id="skills">
+    <h2 data-en="Skills" data-zh="技能">Skills</h2>
+    <ul class="skills-list">
+      <li><b data-en="Programming / Data Analysis / Machine Learning / AI Tools:" data-zh="编程 / 数据分析 / 机器学习 / AI 工具："></b>
+        <span>Python, Java, SQL, R, C, Data Structures, Distributed Computing, Deep Learning, PyTorch, LLM, Qoder, WorkBuddy, Trae, Dify</span></li>
+      <li><b data-en="Data Visualization & BI:" data-zh="数据可视化与 BI："></b>
+        <span>Tableau, Power BI, MS Office 365</span></li>
+      <li><b data-en="Data Engineering & Architecture:" data-zh="数据工程与架构："></b>
+        <span data-en="Data Warehouse Design & Implementation, Data ETL, Linux" data-zh="数据仓库设计与实施、数据 ETL、Linux"></span></li>
+      <li><b data-en="Languages:" data-zh="语言："></b>
+        <span data-en="Mandarin (Native), English (Business & daily communication, TOEFL 109)" data-zh="普通话（母语），英语（商务及日常沟通，托福 109）"></span></li>
+    </ul>
+  </div>
+
+  <br>
+
+  <!-- ============ Honors & Awards ============ -->
+  <div id="awards">
+    <h2 data-en="Honors & Awards" data-zh="荣誉与奖项">Honors &amp; Awards</h2>
+    <ul>
+      <li data-en="Canglong Scholarship, Hubei University of Economics (2019, 2020)"
+          data-zh="藏龙奖学金，湖北经济学院（2019、2020）"></li>
+      <li data-en="Special Scholarship for Information Management, Hubei University of Economics (2019, 2020)"
+          data-zh="信息管理专业特别奖学金，湖北经济学院（2019、2020）"></li>
+      <li data-en="Excellent Undergraduate Thesis Award"
+          data-zh="优秀本科毕业论文奖"></li>
+    </ul>
+  </div>
+
+  <br>
+
+  <!-- ============ Footer ============ -->
+  <div id="footer">
+    <p class="footer-center">
+      &copy; <span id="year">2026</span> Tongxi Liu (Terence) &nbsp;·&nbsp;
+      <span data-en="Last updated: November 2026" data-zh="最后更新：2026 年 11 月"></span>
+    </p>
+  </div>
+
+</div>
+
+<!-- 返回顶部 -->
+<button onclick="topFunction()" id="myBtn" title="Go to top" data-en="Top" data-zh="顶部">Top</button>
+
+<script src="script.js"></script>
+</body>
+</html>
