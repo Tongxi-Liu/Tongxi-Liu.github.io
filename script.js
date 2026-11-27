@@ -120,3 +120,41 @@ document.getElementById('year').textContent = new Date().getFullYear();
   // 暴露给外部（锚点点击已调用）
   window._closeMenu = closeMenu;
 })();
+
+// ============ 导航栏滚动状态 + scrollspy 高亮 ============
+(function () {
+  var navbar = document.querySelector('.navbar');
+  var navLinks = document.querySelectorAll('.layout-menu a[href^="#"]');
+  if (!navbar || !navLinks.length) return;
+
+  // 1) 滚动后导航栏变实 + 底部浮影
+  function onScroll() {
+    if (window.scrollY > 12) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // 2) scrollspy：滚动高亮当前区块
+  var sections = [];
+  navLinks.forEach(function (l) {
+    var s = document.querySelector(l.getAttribute('href'));
+    if (s) sections.push(s);
+  });
+
+  var currentId = null;
+  function setActive(id) {
+    if (id === currentId) return;
+    currentId = id;
+    navLinks.forEach(function (l) {
+      l.classList.toggle('active', l.getAttribute('href') === '#' + id);
+    });
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) setActive(e.target.id);
+    });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+  sections.forEach(function (s) { observer.observe(s); });
+})();

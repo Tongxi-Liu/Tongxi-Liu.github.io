@@ -1,3 +1,17 @@
+/* ============ 主题色变量 ============ */
+:root {
+  --deep-blue: #002733;                 /* 深空蓝：文字主色、标题、汉堡图标 */
+  --teal: #008C82;                      /* 青绿：强调色（链接、下划线、高亮、按钮） */
+  --ink: #002733;
+  --gray: rgba(0, 39, 51, 0.62);        /* 次要文字 */
+  --gray-strong: rgba(0, 39, 51, 0.82); /* 正文次要强调 */
+  --gray-light: rgba(0, 39, 51, 0.45);  /* 更弱的提示文字 */
+  --border: rgba(0, 39, 51, 0.12);      /* 分隔线 */
+  --border-strong: rgba(0, 39, 51, 0.28); /* 按钮边框 */
+  --hairline: rgba(0, 39, 51, 0.08);    /* 极淡分隔线 */
+  --hover-bg: rgba(0, 39, 51, 0.04);    /* 悬停背景 */
+}
+
 /* ============ 基础 ============ */
 * { box-sizing: border-box; }
 
@@ -7,7 +21,7 @@ body {
   font-family: "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  color: #000;
+  color: var(--ink);
   background-color: #fff;
   margin: 0;
   padding: 0;
@@ -15,7 +29,7 @@ body {
   overflow-x: hidden;
 }
 
-a { color: #0366d6; text-decoration: none; }
+a { color: var(--teal); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 h1 {
@@ -28,7 +42,7 @@ h2 {
   font-size: 22px;
   margin: 24px 0 12px 0;
   padding-bottom: 6px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--border);
   font-weight: bold;
 }
 
@@ -54,14 +68,22 @@ em { font-style: italic; }
   padding: 20px 24px 60px 24px;
 }
 
-/* ============ 顶部导航 ============ */
+/* ============ 顶部导航：毛玻璃 ============ */
 .navbar {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
-  padding: 0;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+/* 滚动后：背景变实 + 底部浮影 */
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.82);
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
 .nav-inner {
@@ -82,26 +104,56 @@ em { font-style: italic; }
 }
 
 .layout-menu a {
+  position: relative;
+  display: inline-block;
+  padding: 6px 8px;
   font-size: 15px;
-  color: #000;
+  color: var(--gray);
   font-weight: 500;
   white-space: nowrap;
   flex-shrink: 0;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
-
-.layout-menu a:hover { color: #0366d6; text-decoration: none; }
+/* hover 下划线：青绿细线从左到右展开 */
+.layout-menu a::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 2px;
+  height: 2px;
+  background: var(--teal);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.layout-menu a:hover { color: var(--ink); text-decoration: none; }
+.layout-menu a:hover::after { transform: scaleX(1); }
+/* 当前区块高亮（scrollspy） */
+.layout-menu a.active {
+  color: var(--ink);
+  font-weight: 650;
+}
+.layout-menu a.active::after { transform: scaleX(1); }
 
 .lang-toggle {
   flex-shrink: 0;
   margin-left: auto;
-  padding: 4px 14px;
-  border: 1px solid #bbb;
-  border-radius: 14px;
+  padding: 5px 14px;
+  font-size: 13.5px;
+  color: var(--gray);
+  border: 1px solid var(--border-strong);
+  border-radius: 16px;
   cursor: pointer;
   user-select: none;
   white-space: nowrap;
+  background: transparent;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
-.lang-toggle:hover { border-color: #0366d6; color: #0366d6; }
+.lang-toggle:hover { border-color: var(--teal); color: var(--teal); text-decoration: none; }
 
 /* 汉堡按钮（默认隐藏，移动端显示） */
 .hamburger {
@@ -120,14 +172,14 @@ em { font-style: italic; }
   -webkit-tap-highlight-color: transparent;
 }
 /* 仅键盘导航时显示焦点轮廓，避免移动端点击出现黑框 */
-.hamburger:focus-visible { outline: 2px solid #0366d6; outline-offset: 2px; }
+.hamburger:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
 .hamburger .bar {
   display: block;
   width: 24px;
   height: 2px;
-  background-color: #000;
+  background-color: var(--ink);
   border-radius: 2px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.28s ease, opacity 0.28s ease;
 }
 /* 展开时汉堡变 X */
 .hamburger.open .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -151,11 +203,11 @@ em { font-style: italic; }
 .header-info { vertical-align: top; }
 
 .affil { margin: 8px 0; font-size: 16px; }
-.contact a { color: #0366d6; word-break: break-all; }
+.contact a { color: var(--teal); word-break: break-all; }
 
 .social-icons { margin-top: 10px; display: flex; gap: 16px; align-items: center; }
-.social-icons a { color: #333; display: inline-flex; padding: 4px; }
-.social-icons a:hover { color: #0366d6; }
+.social-icons a { color: var(--ink); display: inline-flex; padding: 4px; }
+.social-icons a:hover { color: var(--teal); }
 
 .header-photo { vertical-align: top; text-align: right; width: 220px; }
 .img-circle {
@@ -163,10 +215,10 @@ em { font-style: italic; }
   width: 180px;
   height: 180px;
   object-fit: cover;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border);
 }
 
-.alias { font-size: 20px; font-weight: normal; color: #555; }
+.alias { font-size: 20px; font-weight: normal; color: var(--gray); }
 
 /* ============ News ============ */
 .news-scroll { overflow-y: auto; max-height: 320px; padding-right: 8px; }
@@ -181,33 +233,33 @@ em { font-style: italic; }
 /* ============ Projects ============ */
 .proj { margin: 16px 0; }
 .proj-title { margin-bottom: 2px; }
-.proj-meta { font-size: 14px; color: #555; }
+.proj-meta { font-size: 14px; color: var(--gray); }
 .proj ul { margin-top: 4px; }
 
 /* ============ Experience ============ */
 .exp-table { width: 100%; border-collapse: collapse; }
 .exp-info { vertical-align: top; padding-bottom: 18px; }
 .exp-company { margin: 0; font-size: 16px; }
-.exp-role { margin: 2px 0 6px 0; font-size: 14px; color: #555; }
+.exp-role { margin: 2px 0 6px 0; font-size: 14px; color: var(--gray); }
 .exp-info ul { margin: 4px 0; }
 
 /* ============ Education ============ */
 .edu-table { width: 100%; border-collapse: collapse; }
 .edu-info { vertical-align: top; padding-bottom: 18px; }
 .edu-school { margin: 0; font-size: 16px; }
-.edu-loc { font-weight: normal; color: #555; font-size: 14px; }
+.edu-loc { font-weight: normal; color: var(--gray); font-size: 14px; }
 .edu-degree { margin: 2px 0; font-size: 15px; }
-.edu-detail { margin: 4px 0; font-size: 14px; color: #333; }
+.edu-detail { margin: 4px 0; font-size: 14px; color: var(--gray-strong); }
 /* 桌面端：日期显示在右侧独立列，隐藏 info 内的重复日期 */
-.edu-date { display: none; margin: 2px 0; font-size: 13px; color: #555; }
-.edu-date-col { vertical-align: top; text-align: right; white-space: nowrap; color: #555; font-size: 14px; width: 130px; }
+.edu-date { display: none; margin: 2px 0; font-size: 13px; color: var(--gray); }
+.edu-date-col { vertical-align: top; text-align: right; white-space: nowrap; color: var(--gray); font-size: 14px; width: 130px; }
 
 /* ============ Skills ============ */
 .skills-list li { margin: 5px 0; }
 
 /* ============ Footer ============ */
-#footer { margin-top: 30px; padding-top: 12px; border-top: 1px solid #ccc; }
-.footer-center { text-align: center; font-size: 13px; color: #666; }
+#footer { margin-top: 30px; padding-top: 12px; border-top: 1px solid var(--border); }
+.footer-center { text-align: center; font-size: 13px; color: var(--gray); }
 
 /* ============ 返回顶部按钮 ============ */
 #myBtn {
@@ -219,14 +271,14 @@ em { font-style: italic; }
   font-size: 14px;
   border: none;
   outline: none;
-  background-color: #8d93ab;
+  background-color: var(--teal);
   color: #fff;
   cursor: pointer;
   padding: 12px 15px;
   border-radius: 4px;
   -webkit-tap-highlight-color: transparent;
 }
-#myBtn:hover { background-color: #555; }
+#myBtn:hover { background-color: #00726a; }
 
 /* =========================================================
    响应式 —— iPad（平板）
@@ -250,7 +302,7 @@ em { font-style: italic; }
   /* 显示汉堡按钮，并让它浮在展开的菜单面板之上 */
   .hamburger { display: flex; position: relative; z-index: 101; }
 
-  /* 菜单改为侧滑抽屉 */
+  /* 菜单改为侧滑抽屉（毛玻璃） */
   .layout-menu {
     position: fixed;
     top: 0;
@@ -258,14 +310,16 @@ em { font-style: italic; }
     height: 100vh;
     width: 78%;
     max-width: 320px;
-    background-color: #fff;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     flex-direction: column;
     align-items: flex-start;
-    gap: 4px;
+    gap: 2px;
     padding: 80px 24px 24px 24px;
     box-shadow: 2px 0 16px rgba(0, 0, 0, 0.15);
     transform: translateX(-100%);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 100;
     overflow-y: auto;
   }
@@ -276,9 +330,12 @@ em { font-style: italic; }
     width: 100%;
     font-size: 17px;
     padding: 12px 8px;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid var(--hairline);
   }
-  .layout-menu a:hover { background-color: #f7f7f7; text-decoration: none; }
+  /* 移动端隐藏下划线，改用文字变色高亮 */
+  .layout-menu a::after { display: none; }
+  .layout-menu a:hover { background-color: var(--hover-bg); text-decoration: none; }
+  .layout-menu a.active { color: var(--teal); font-weight: 650; }
 
   /* 语言切换按钮在顶部栏右侧，与汉堡图标平行，并浮在菜单面板之上 */
   .lang-toggle {
@@ -308,7 +365,7 @@ em { font-style: italic; }
 
   /* News 表格：日期与内容分行显示 */
   .news-table td:first-child { width: auto; display: block; }
-  .news-table tr { display: block; padding: 6px 0; border-bottom: 1px solid #f0f0f0; }
+  .news-table tr { display: block; padding: 6px 0; border-bottom: 1px solid var(--hairline); }
   .news-table tr:last-child { border-bottom: none; }
 }
 
