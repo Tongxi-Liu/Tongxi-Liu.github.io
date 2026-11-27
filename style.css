@@ -126,7 +126,10 @@ em { font-style: italic; }
   border-radius: 2px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
-/* 展开时图标保持三条横线不变（不变成 X），点击图标即可折叠 */
+/* 展开时汉堡变 X */
+.hamburger.open .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open .bar:nth-child(2) { opacity: 0; }
+.hamburger.open .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* 遮罩 */
 .menu-overlay {
@@ -241,8 +244,8 @@ em { font-style: italic; }
   .layout-content { padding: 16px 20px 48px 20px; }
   .nav-inner { padding: 8px 16px; }
 
-  /* 显示汉堡按钮 */
-  .hamburger { display: flex; }
+  /* 显示汉堡按钮，并让它浮在展开的菜单面板之上 */
+  .hamburger { display: flex; position: relative; z-index: 101; }
 
   /* 菜单改为侧滑抽屉 */
   .layout-menu {
