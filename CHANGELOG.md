@@ -6,6 +6,14 @@
 
 > **Tag 说明**：仓库早期仅有 CHANGELOG 记录、未实际打 git tag。自 v1.3.0 起补齐历史标签：`v1.0.0`（Initial commit）、`v1.2.0`（v1.2 提交）、`v1.2.1`（姓名邮箱更新）。v1.1.0 的改动与 v1.2.0 合并于同一提交，故无独立 tag。
 
+## [v1.3.2] - 2026-11-27
+
+### 修复
+- SEO 元数据（`description`、`keywords`）中的姓名统一为「Tongxi (Terence) Liu」，与新标题一致。
+- 邮箱 `terence.liutx@gmail.com` 的链接地址与显示文本统一（原链接误指向 `terence.liu99@qq.com`）。
+
+---
+
 ## [v1.3.1] - 2026-11-27
 
 ### 变更
