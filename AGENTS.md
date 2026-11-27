@@ -9,7 +9,7 @@
 
 | 项 | 内容 |
 |----|------|
-| 项目 | 刘曈晞（Tongxi Liu / Terence）个人学术主页 |
+| 项目 | 刘曈晞（Tongxi (Terence) Liu）个人学术主页 |
 | 线上地址 | https://tongxi-liu.github.io/ |
 | 仓库 | Tongxi-Liu/Tongxi-Liu.github.io（分支 `main`） |
 | 托管 | GitHub Pages（纯静态，无构建、无依赖） |
